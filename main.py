@@ -12,7 +12,7 @@ app = FastAPI(title='NaloRH API', version='1.0.0')
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_methods=['*'], allow_headers=['*'])
 
 print('NaloRH API - Chargement modeles...')
-bundle      = joblib.load('/content/NaloRH_churn_model_v1.pkl')
+bundle = joblib.load('NaloRH_churn_model_v1.pkl')
 churn_model = bundle['model']
 FEATURES    = bundle['features']
 THRESHOLD   = bundle['threshold']
